@@ -14,6 +14,11 @@ django-filter = "*"
 djoser = "*"
 djangorestframework-simplejwt = "*"
 social-auth-app-django = "*"
+pillow = "*"
+django-cors-headers = "*"
+redis = "*"
+celery = "*"
+flower = "*"
 
 [dev-packages]
 

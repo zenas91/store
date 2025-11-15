@@ -7,6 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
 from store.models import Product, Order, OrderItem, Customer, Collection, Cart, CartItem
 from tags.models import TaggedItem
+from .tasks import notify_customers
 
 
 # Transaction is used to ensure everything is successful, otherwise any successful operation will be rolled back
@@ -35,4 +36,6 @@ def say_hello(request):
     # queryset = TaggedItem.objects.get_tags_for(Product, 1)
 
     # return render(request, 'hello.html', {'name': 'Zeus', 'result': list(queryset)})
+
+    notify_customers.delay('Hello')
     return render(request, 'hello.html', {'name': 'Zeus'})
