@@ -21,6 +21,9 @@ celery = "*"
 flower = "*"
 
 [dev-packages]
+pytest = "*"
+pytest-django = "*"
+pytest-watch = "*"
 
 [requires]
 python_version = "3.12"
